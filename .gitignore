@@ -1,0 +1,8 @@
+venv/
+__pycache__/
+flask_session/
+myenv/
+myenv2/
+myenvmyenv/
+Archived/
+MaximPage-Letsgo/

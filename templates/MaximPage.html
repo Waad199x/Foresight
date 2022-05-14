@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+
+<head>
+    <link rel="icon" href="../static/images/favicon.png">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    {% block title %}Maxim{% endblock %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/MaximStyle.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+{% block content %}
+
+<style>
+
+
+/* Maxim Page*/
+
+.Chatbot{
+     display: flex;
+     padding-left: 50%;
+     padding-top: 5%;
+
+     
+ }
+
+ .wrapper {
+     width: 450px;
+  
+ }
+
+ .wrapper .Maxi {
+     background: linear-gradient(to right, #ff69df,#a990ff);
+     color: white;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: left;     
+     height: 12%;
+
+ }
+ .wrapper .Maxi p{
+    line-height:2.5 ;
+    border-radius: 5px 5px 0 0;
+    text-align: left;
+    font-size: 20px;
+    position: relative;
+    left: 2%;
+}
+ .wrapper .Maxi .Maxim-icon{
+     width: 60px;
+     height: 60px;
+     margin-left: 2%;
+ }
+
+.box{
+     border: 5px solid ;
+     padding: 20px 15px;
+     border-image-slice:1 ;
+     border-width: 5px;
+     border-top: 0;
+     min-height: 400px;
+     max-height: 400px;
+ }
+
+
+  .border-gradiant{
+        border-image-source: linear-gradient(to right, #ff69df,#a990ff);
+      }
+ 
+
+ .wrapper .box .item{
+     display: flexbox;
+ 
+ }
+
+ 
+/*
+.wrapper .box .item .msg{
+    position: relative;
+    background: linear-gradient(-1deg, #cf3fd4 17%, #eb5bcc 64%);
+    color: white;
+    width: 150px;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 0;
+    top: 7px;
+    left: -10px;
+
+}
+
+.wrapper .box .item .msg:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-width: 15px 0 0 15px;
+    border-color: transparent transparent transparent #eb5bcc;
+    top: -12px;
+    left: 10%;
+    margin-left: -8px;
+}
+.wrapper .box .item .msg p{
+    padding: 10px;
+
+}*/
+
+
+.wrapper .typing-area{
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+    margin-top: 5px;
+
+}
+
+.wrapper .typing-area .input-feild{
+    width: 100%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+
+.wrapper .typing-area .input-field input{
+    padding: 15px 15px;
+    border: 5px solid #eb5bcc ;
+    border-right-color: #a990ff;
+    width: 450px;
+    background: transparent;
+    border-top: 0;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.wrapper .typing-area .input-field input::placeholder{
+    color:#c5c2c2;
+
+}
+
+.MaximImage{
+    width: 550px;
+    left: 10%;
+    top: 10%;
+    position: absolute;
+}
+
+
+
+
+
+</style>
+
+        
+    </section>
+
+    <!-- JavaScript for toggle Menu -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+             navLinks.style.right = "0";
+        }
+        function hideMenu(){
+             navLinks.style.right = "-201px";    
+        }
+
+    </script>
+
+  <section class="Chatbot">
+      <img src= "../static/images/2nd.png" class="MaximImage">
+      <div class="wrapper">     
+          <div class="Maxi">         
+                    <img src="../static/images/Maxim-icon.png" class="Maxim-icon"><p>Maxim</p></div> 
+          <div class="box border-gradiant">
+              <div class ="item">
+                
+                <!-- <div class ="msg">
+                    <p>Welcome Friend !</p>
+                </div>-->
+              </div>
+
+
+          </div>
+
+          <div class="typing-area ">
+              <div class="input-field">
+                  <input type="text" placeholder="Write Here">
+                  <button></button>              
+              </div>
+          </div>
+
+
+      </div>
+  </section>
+
+  {% endblock %}

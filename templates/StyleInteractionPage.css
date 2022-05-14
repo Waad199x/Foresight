@@ -1,0 +1,541 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+/* This the shadow effect on the edges but it doesn't work rn*/
+.header{
+    height: 100vh; /* this minimum height  */
+    background: linear-gradient(rgba(100, 46, 46, 0.7),rgba(0,0,0.0.7));
+    background-position: center;
+    background-size: cover;
+    /* BG of website  */
+}
+body{
+    
+    background: linear-gradient(#81808046,#ffffff,#ffffff,#ffffff,#ffffff,#81808046);
+}
+
+.navbar .navbar-brand {
+    color: #94128A;
+    font-size: 24px;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav img{
+    width: 130px;
+}
+
+.MainImage{
+    width: 550px;
+    top: 18%;
+    left: 55%;
+    position: absolute;
+}
+/* paddings are to add space */
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{ /* upper list arrangment */
+        list-style: none;
+        display: inline-block;
+        /*padding: bottom left top bottom right*/
+        /*padding: Top&bottom right&left*/
+        padding: 3px 12px;
+        margin: 10px;
+        position: relative;
+}
+
+.nav-links ul li a{ /* upper list style */
+
+    color:rgb(189, 99, 207);
+    background: -webkit-linear-gradient(45deg, #ff69df,#a990ff);
+    text-decoration: none ;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 1px 1px;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    cursor: pointer;
+}
+
+
+.nav-links ul li5 a{ /*Interaction button styling*/
+  
+        cursor: pointer;
+        font-weight: 900;
+        color: #ffff;
+        border-radius: 25px;
+        text-decoration: none;
+        padding: 3px 12px;
+        margin: 10px;
+        background: linear-gradient(to right, #ff69df,#a990ff);
+    
+    }
+
+
+.nav-links ul li2 a{ /*Login button styling*/
+
+    color:rgb(189, 99, 207);
+    border-radius: 25px;
+    display: inline-block;
+    text-decoration: none;
+    background: -webkit-linear-gradient(45deg, #ff69df,#a990ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    border: 0.5px solid #c056c4;   
+    padding:1px 12px ;
+    font-weight: bold;
+    font-size: 17px;
+    position: relative;
+    cursor: pointer; 
+}
+
+.nav-links ul li3 a{ /*Language buttons styling*/
+
+    color:rgb(189, 99, 207);
+    background: -webkit-linear-gradient(45deg, #ff69df,#a990ff);
+    text-decoration: none ;
+    font-size: 17px;
+    padding: 1px 1px;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    cursor: pointer;
+}
+
+.nav-links ul li4 a{ /*Line between Language buttons*/
+
+    color:rgb(189, 99, 207);
+    background: -webkit-linear-gradient(45deg, #ff69df,#a990ff);
+    text-decoration: none ;
+    font-size: 17px;
+    padding: 1px 1px;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+
+/* the line affect under the buttons :
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #c056c4;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}*/
+
+.nav-links ul li a:hover{ /*List Text transition styling*/
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    transition: 0.1s ;
+    cursor: pointer;
+}
+
+.nav-links ul li:hover{ /*List BG transition styling*/
+    font-weight: 900;
+    color: #ffff;
+    border-radius: 25px;
+    text-decoration: none;
+    background: linear-gradient(to right, #ff69df,#a990ff);
+}
+
+.nav-links ul li2 a:hover{ /*Login text transition styling*/
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    border: 0px;
+    transition: 0.1s ;
+    cursor: pointer;
+}
+.nav-links ul li2:hover{ /*Login border and BG transition styling*/
+    font-weight: 900;
+    color: #ffff;
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 3px 0.8px;
+    background: linear-gradient(to right, #ff69df,#a990ff);
+}
+.nav-links ul li3 a:hover{ /*Language buttons transition styling*/
+font-weight: bold;
+}
+
+/* the .nav-links ul li:hover::after is for the line under 
+ .nav-links ul li:hover is for the bold effect  
+  delete one of them after discution with raneem 
+  .nav-links ul li a :hover is for the circle around
+  you can mix them together in the a one so it will be better */
+
+
+
+/* project main colors code
+pink grade ff69df #
+purple grade a990ff # 
+*/
+
+/* what ever we will write here will 
+be applicable for all devices equalto  or less than 700px*/
+
+nav .fa{
+    display: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0px;
+}
+  
+.WritingBox { /* The Conversaton Area */
+    padding: 5px;
+    overflow: hidden;
+    top: 70px;
+    align-self:flex-start;
+    position: absolute;
+    right: 0%;
+    left: 25%;
+    bottom: 0%;
+    top: 15%;
+    border-top: 1px solid  #b962a3;
+    columns: #633896;
+    background-color: rgb(245, 241, 241);
+    text-decoration: none;
+}
+
+.WritingBox textarea{
+    padding: 3px 12px;
+    position: absolute;
+    left: 8%;
+    bottom: 0%;
+    top: 90%;
+    width: 100%;
+    border: 1px solid;
+    border-bottom: 1px solid black;
+    background-color: white;
+    
+}
+
+.fa-paperclip {
+    position: absolute;
+    left: 1%;
+    top: 93%;
+    width: 100%; 
+    font-size: 30px;
+}
+
+.Groups{
+    display: inline-block;
+    background: linear-gradient(to right, #ff69df,#e590ff);
+    position: fixed; /* Means it won't move*/
+    overflow: hidden;
+    left: 0%;
+    right: 75%;
+    bottom: 0%;
+    top: 15%;
+    align-self:flex-start;
+    text-decoration: none;
+}
+
+.Groups a{ /* the 4 main sections */
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color:rgb(255, 255, 255);
+    width: fit-content;
+    border-bottom: 2px solid #a990ff;
+}
+
+
+  .menu a {
+    text-decoration: none;
+  }
+  
+  .menu-item {
+    list-style: none;
+    overflow: hidden;
+}  
+
+.menu-item a {
+    padding: 0cm ;
+}  
+  .menu-item__sub { /* styling the list transition & background */
+    background: rgba(128, 128, 128, 0.075);
+    overflow: hidden;
+    transition: max-height 0.8s;
+    max-height: 0;
+  }
+  
+  .menu-item__sub a { /* styling the MAjors text */
+    display: block;
+    padding: 0cm 1rem ;
+    color: white;
+    font-size: 15px;
+    position: relative;  
+
+}
+  
+  .menu-item__sub a::before { /* the little rectangle on majors list */
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0.4rem;
+    height: 100%;
+    background: #675a94;
+    transform: translatex(-0.4rem);
+    transition: 0.3s;
+    opacity: 0;
+  }
+
+  .menu-item__sub a:hover::before { /* the little rectangle when passing buton*/
+    opacity: 80;
+    transform: translatex(50);
+  }
+  
+  .menu-item:target .menu-item__sub {
+    max-height: 21em;
+  }
+
+
+.btn {
+    display: block;
+    padding: 1rem 1.2rem;
+    background: var(#000000);
+    color: wheat;
+    position: relative;
+
+}
+
+.btn ::before {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: var(--blue);
+    left: 1.5rem;
+    bottom: -0.5rem;
+    transform: rotate(45deg);
+}
+.btn i {
+    margin-right: 1rem;
+}
+
+.sub-groups{
+    background: var(--grey);
+    overflow: hidden;
+    transition: max-height 0.3s;
+    max-height: 0;
+}
+
+.sub-groups a {
+    display: block;
+    padding: 1rem 1.6 rem;
+    color: white;
+    font-size: 0.9 rem;
+    position: relative;
+    border-bottom: 1px solid var(--light-grey) ;
+
+}
+.sub-groups a ::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 0.4;
+    height: 100%;
+    background: var(--blue);
+    transform: translateX(-0.4rem);
+    transition: 0.3s;
+    opacity: 0;
+}
+
+
+.sub-groups a:hover::before{
+    opacity:1;
+    transform: translateX(0);
+}
+
+
+.majors:target .sub-groups {
+    max-height: 10em;
+
+} 
+
+
+.Groups ul li { /* Majors groups */
+    text-decoration: none;
+    display: flex;
+    font-weight: lighter;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    color:rgb(168, 12, 12);
+    width: fit-content;
+}
+
+
+.Conversation{
+    background: #d8d5d5;
+    flex-basis: 25%;
+    position: sticky; /* Means it won't move*/
+    top: 70px;
+    align-self: flex-start;
+}
+
+
+
+/* Mobile version */
+@media(max-width: 700px){
+    
+    .MainImage{
+        width: 300px;
+        top: 15%;
+        left: 9%;
+        position: absolute;
+    }
+    .text-box{
+        width: 90%;
+        position: center;
+        top: 70%;
+        left: 23%;
+        transform: translate(-20%,-30%);
+        text-align: center;
+    }
+    .text-box h1{
+        font-size: 35px;}
+
+    .text-box p{
+        margin: 20px 0 30px;
+        font-size: 16px;
+    }    
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute ;
+        background: #c056c4;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -201px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+        opacity: 0.8;
+
+        
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+
+    nav .fa{
+        display: block;
+        color: rgb(161, 35, 130);
+        background: -webkit-linear-gradient(45deg, #ff69df,#a990ff);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color: transparent;
+        margin: 10px;
+        font-size: 19px;
+        cursor: pointer;
+        
+    }
+    .nav-links ul li a{
+
+        color:rgb(189, 99, 207);
+        background: white ;
+        text-decoration: none ;
+        font-size: 17px;
+        font-weight: bold;
+        padding: 1px 1px;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+    }
+    
+    .nav-links ul li2 a{ /*Login button styling*/
+
+        color:rgb(189, 99, 207);
+        background: white ;
+        text-decoration: none ;
+        font-size: 17px;
+        font-weight: bold;
+        padding: 1px 12px;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+    }
+    
+    .nav-links ul li3 a{ /*Language buttons styling*/
+    
+        color:rgb(255, 255, 255);
+        margin: 8px;
+        background: white;
+        text-decoration: none ;
+        font-size: 17px;
+        position: center;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        cursor: pointer;
+        display: flex;
+        padding: 0.1% 6%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-links ul li4 a{ /*Line between Language buttons*/
+        display: none;
+    }
+    .icons{
+       
+        position: center;
+        left: 32%;
+        top: 580px;
+        margin: 20px 0 30px;
+        padding: 1px 1px;
+        cursor: pointer;   
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

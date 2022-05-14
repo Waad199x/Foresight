@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <link rel="icon" href="../static/images/favicon.png">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <style type="text/css">
+            /* Chat containers */
+            .container {
+              border: 2px solid #dedede;
+              background-color: #f1f1f1;
+              border-radius: 5px;
+              padding: 10px;
+              margin: 10px 0;
+            }
+
+            /* Darker chat container */
+            .darker {
+              border-color: #ccc;
+              background-color: #ddd;
+            }
+
+            /* Clear floats */
+            .container::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+
+            /* Style images */
+            .container b {
+              float: left;
+              max-width: 60px;
+              width: 100%;
+              margin-right: 20px;
+              border-radius: 50%;
+            }
+
+            /* Style the right image */
+            .container b.right {
+              float: right;
+              margin-left: 20px;
+              margin-right:0;
+            }
+
+            /* Style time text */
+            .time-right {
+              float: right;
+              color: #aaa;
+            }
+
+            /* Style time text */
+            .time-left {
+              float: left;
+              color: #999;
+            }
+
+
+        </style>
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="StyleInteractionPage.css">
+
+     <style>
+       
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+  height: 100vh; /* this minimum height  */
+  background: linear-gradient(#81808046,#ffffff,#ffffff,#ffffff,#ffffff,#81808046);
+}
+/* Style bar BG */
+    .bg-dark {
+    background-color: #ffffff00!important;
+      }
+
+    /* Style website name BG */
+    .navbar .navbar-brand {            
+    background-color: #94128A;
+    font-size: 24px;
+    }
+
+      /* Style website name text */
+    .navbar-dark .navbar-brand {
+    color: rgb(134, 19, 19);
+    }
+
+
+    .nav-item .nav-link {
+      color:rgb(3, 2, 3);
+      font-size: 50px;
+    }
+
+
+
+nav img{
+    width: 130px;
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+
+
+}
+
+/* bar direction */
+.nav-Links {
+    flex: 1;
+    text-align: right;
+    padding: 3px 12px;
+    margin: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+/* all bar text styling */
+  .nav-link {
+    text-align: left;
+    color:rgb(189, 99, 207);
+    background: -webkit-linear-gradient(45deg, #ff69df,#a990ff);
+    text-decoration: none ;
+    font-size: 17px;
+    font-weight: bold;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    cursor: pointer;
+    display: inline-block;
+    padding: 3px 8px;
+    margin: 8px 10px;
+    position: relative;
+    
+  }
+
+/* Login text styling */
+  li5 a.nav-item.nav-link {
+    color:rgb(189, 99, 207);
+    border-radius: 25px;
+    display: inline-block;
+    text-decoration: none;
+    background: -webkit-linear-gradient(45deg, #ff69df,#a990ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    border: 0.5px solid #c056c4;   
+    padding:1px 12px ;
+    font-weight: bold;
+    font-size: 17px;
+    position: relative;
+    cursor: pointer; 
+  }
+
+/* Logout text styling */
+  li6 a.nav-item.nav-link {
+    color:rgb(189, 99, 207);
+    border-radius: 25px;
+    display: inline-block;
+    text-decoration: none;
+    background: -webkit-linear-gradient(45deg, #ff69df,#a990ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    border: 0.5px solid #c056c4;   
+    padding:1px 12px ;
+    font-weight: bold;
+    font-size: 17px;
+    position: relative;
+    cursor: pointer; }
+
+  /* language and line text styling */
+  a:not([href]){
+    text-align: left;
+    color:rgb(189, 99, 207);
+    background: -webkit-linear-gradient(45deg, #ff69df,#a990ff);
+    text-decoration: none ;
+    font-size: 17px;
+    padding: 1px 1px;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    cursor: pointer;
+    display: inline-block;
+    padding: 3px 12px;
+    position: relative;
+  }
+
+/*list hover*/
+  .nav-link:focus, .nav-link:hover{
+    cursor:pointer;
+  }
+
+  .nav-link:focus, .nav-link:hover{ /*List Text transition */
+    background: white;
+    color: wheat;
+}
+.nav-link:hover{ /*List BG transition */
+    font-weight: 550;
+    color: #ffff;
+    border-radius: 25px;
+    text-decoration: none;
+    background: linear-gradient(to right, #ff69df,#a990ff);
+    -webkit-text-fill-color: white;   
+}
+
+li5 a.nav-item.nav-link:hover{ /*Login border and BG transition styling*/
+    font-weight: 900;
+    color: #ffff;
+    border-radius: 25px;
+    text-decoration: none;
+    background: linear-gradient(to right, #ff69df,#a990ff);
+    -webkit-text-fill-color: white;
+    border-color: transparent;
+}
+
+li6 a.nav-item.nav-link:hover{ /*Logout border and BG transition styling*/
+    font-weight: 900;
+    color: #ffff;
+    border-radius: 25px;
+    text-decoration: none;
+    background: linear-gradient(to right, #ff69df,#a990ff);
+    -webkit-text-fill-color: white;
+    border-color: transparent;
+}
+li3 a.nav-item.nav{ /*Eng styling*/
+  font-weight: bold;}
+
+li4 a.nav-item.nav:hover{ /*AR styling*/
+  font-weight: bold;}
+
+
+
+
+
+      </style>
+    
+      </head>
+
+
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a href="../Home"><img src= "../static/images/officialLogo.png"></a>
+
+          <h1 class="navbar-brand" href="#"> </h1>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="nav-Links">
+              <ul>
+            <li1><a class="nav-item nav-link" href="/Home">Home</a></li1>
+              <a class="nav-item nav-link" href="/Maxim">Maxim</a>
+             <li2> <a class="nav-item nav-link" href="/chat">Interaction <span class="sr-only">(current)</span></a></li2>
+              <li5><a class="nav-item nav-link" id="login" href="/">Login</a></li5>
+              <li6><a class="nav-item nav-link" id="logout" href="/logout">Logout</a></li6>
+              <li4><a class="nav-item nav" herf=""> AR </a></li4>
+              <li7><a class="nav-item nav"> | </a></li7>
+              <li3><a  class="nav-item nav" herf=""> ENG </a></li3>
+            </ul>
+            </div>
+          </div>
+        </nav>
+        {% block messages %}
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <div class="alert alert-dark" role="alert">
+                    {% for message in messages %}
+                      {{ message }}
+                    {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+    </body>
+</html>
